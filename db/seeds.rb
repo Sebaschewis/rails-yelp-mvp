@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+restaurants = [
+  { name: "Epicure", address: "75008 Paris", category: "french" },
+  { name: "Sushi Zen", address: "Tokyo, Japan", category: "japanese" },
+  { name: "La Pasta", address: "Rome, Italy", category: "italian" }
+]
+
+restaurants.each do |restaurant|
+  r = Restaurant.create!(restaurant)
+  r.reviews.create!(content: "Amazing food!", rating: 5)
+  r.reviews.create!(content: "Pretty good!", rating: 4)
+end

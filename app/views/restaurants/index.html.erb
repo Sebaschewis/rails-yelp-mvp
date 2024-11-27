@@ -1,0 +1,13 @@
+<h1>Restaurants</h1>
+
+<%= link_to "Add a New Restaurant", new_restaurant_path, class: "btn btn-success mb-3" %>
+
+<div class="list-group">
+  <% @restaurants.each do |restaurant| %>
+    <div class="list-group-item">
+      <h5><%= restaurant.name %></h5>
+      <p><%= restaurant.category.capitalize %></p>
+      <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
